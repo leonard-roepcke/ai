@@ -24,4 +24,12 @@ test_2_matrix = np.array([
 ])
 
 print("multiple matrix multiplication")
-print(test_matrix @ test_2_matrix)
+mul = test_matrix @ test_2_matrix
+print(mul)
+vec = np.array([1,2,3])
+vec2 = mul @ vec
+vec3 = test_matrix @ (test_2_matrix @ vec)
+print("combined matrix:")
+print(vec2)
+print("after each othder:")
+print(vec3)

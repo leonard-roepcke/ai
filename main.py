@@ -16,3 +16,12 @@ print("jetzt kommt @")
 print(test_matrix @ np.array([1,0,2]))
 print("jetzt kommt dot")
 print(test_matrix.dot(np.array([1,0,2])))
+
+test_2_matrix = np.array([
+    [2,0,1],
+    [1,2,0],
+    [0,1,2]
+])
+
+print("multiple matrix multiplication")
+print(test_matrix @ test_2_matrix)

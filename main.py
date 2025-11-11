@@ -46,10 +46,22 @@ biases = {
 def sigmoid(x):
     return 1/(1+np.exp(-x))
 
-a0 = np.array([[0.5],[0],[0.9]])
-z1 = weights[1] @ a0 + biases[1]
-a1 = sigmoid(z1)
+# a0 = np.array([[0.5],[0],[0.9]])
+# z1 = weights[1] @ a0 + biases[1]
+# a1 = sigmoid(z1)
 
-z2 = weights[2] @ a1 + biases[2]
-a2 = sigmoid(z2)
-print(a2)    
+# z2 = weights[2] @ a1 + biases[2]
+# a2 = sigmoid(z2)
+# print(a2)    
+
+
+activations = {
+    0: np.array([[0.5],[0],[0.1]])
+}
+
+for l in range(len(weights)):
+    z = weights[l+1] @ activations[l] + biases[l+1]
+    a = sigmoid(z)
+    activations[l+1] = a
+
+print(activations[len(weights)])
